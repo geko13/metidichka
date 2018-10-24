@@ -1,0 +1,21 @@
+Цели
+
+    Научиться работать с несколькими ветками с различными (и, возможно, конфликтующими) изменениями.
+
+Пока вы меняли ветку «style», кто-то решил обновить ветку master. Они добавили README.
+01
+Создайте файл README в ветке master.
+Выполните:
+
+git checkout master
+
+Файл: README
+
+This is the Hello World example from the git tutorial.
+
+02
+Сделайте коммит изменений README в ветку master.
+Выполните:
+
+git add README
+git commit -m "Added README"

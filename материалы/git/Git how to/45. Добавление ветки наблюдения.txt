@@ -1,0 +1,28 @@
+÷ели
+
+    Ќаучитьс€ добавл€ть локальную ветку, котора€ отслеживает изменени€ удаленной ветки.
+
+¬етки, которые начинаютс€ с remotes/origin €вл€ютс€ ветками оригинального репозитори€. ќбратите внимание, что у вас больше нет ветки под названием style, но система контрол€ версий знает, что в оригинальном репозитории ветка style была.
+01
+ƒобавьте локальную ветку, котора€ отслеживает удаленную ветку.
+¬ыполните:
+
+git branch --track style origin/style
+git branch -a
+git hist --max-count=2
+
+–езультат:
+
+$ git branch --track style origin/style
+Branch style set up to track remote branch style from origin.
+$ git branch -a
+  style
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/style
+  remotes/origin/master
+$ git hist --max-count=2
+* 2faa4ea 2011-03-09 | Changed README in original repo (HEAD, origin/master, origin/HEAD, master) [Alexander Shvets]
+* 6e6c76a 2011-03-09 | Updated index.html (origin/style, style) [Alexander Shvets]
+
+“еперь мы можем видеть ветку style в списке веток и логе.

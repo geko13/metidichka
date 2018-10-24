@@ -1,0 +1,51 @@
+Цели
+
+    Научиться извлекать изменения из удаленного репозитория.
+
+Выполните:
+
+cd ../cloned_hello
+git fetch
+git hist --all
+
+Примечание: Сейчас мы находимся в репозитории cloned_hello
+Результат:
+
+$ git fetch
+From /Users/alex/Documents/Presentations/githowto/auto/hello
+   6e6c76a..2faa4ea  master     -> origin/master
+$ git hist --all
+* 2faa4ea 2011-03-09 | Changed README in original repo (origin/master, origin/HEAD) [Alexander Shvets]
+* 6e6c76a 2011-03-09 | Updated index.html (HEAD, origin/style, master) [Alexander Shvets]
+* 1436f13 2011-03-09 | Hello uses style.css [Alexander Shvets]
+* 59da9a7 2011-03-09 | Added css stylesheet [Alexander Shvets]
+* 6c0f848 2011-03-09 | Added README [Alexander Shvets]
+* 8029c07 2011-03-09 | Added index.html. [Alexander Shvets]
+* 567948a 2011-03-09 | Moved hello.html to lib [Alexander Shvets]
+* 6a78635 2011-03-09 | Add an author/email comment [Alexander Shvets]
+* fa3c141 2011-03-09 | Added HTML header (v1) [Alexander Shvets]
+* 8c32287 2011-03-09 | Added standard HTML page tags (v1-beta) [Alexander Shvets]
+* 43628f7 2011-03-09 | Added h1 tag [Alexander Shvets]
+* 911e8c9 2011-03-09 | First Commit [Alexander Shvets]
+
+На данный момент в репозитории есть все коммиты из оригинального репозитория, но они не интегрированы в локальные ветки клонированного репозитория.
+
+В истории выше найдите коммит «Changed README in original repo». Обратите внимание, что коммит включает в себя коммиты «origin/master» и «origin/HEAD».
+
+Теперь давайте посмотрим на коммит «Updated index.html». Вы увидите, что локальная ветка master указывает на этот коммит, а не на новый коммит, который мы только что извлекли.
+
+Выводом является то, что команда «git fetch» будет извлекать новые коммиты из удаленного репозитория, но не будет сливать их с вашими наработками в локальных ветках.
+01
+Проверьте README
+
+Мы можем продемонстрировать, что клонированный файл README не изменился.
+Выполните:
+
+cat README
+
+Результат:
+
+$ cat README
+This is the Hello World example from the git tutorial.
+
+Как видите, никаких изменений.

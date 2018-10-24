@@ -1,0 +1,31 @@
+Цели
+
+    Научиться просматривать отличающиеся ветки в репозитории.
+
+01
+Просмотрите текущие ветки
+
+Теперь у нас в репозитории есть две отличающиеся ветки. Используйте следующую лог-команду для просмотра веток и их отличий.
+Выполните:
+
+git hist --all
+
+Результат:
+
+$ git hist --all
+* 6c0f848 2011-03-09 | Added README (HEAD, master) [Alexander Shvets]
+| * 07a2a46 2011-03-09 | Updated index.html (style) [Alexander Shvets]
+| * 649d26c 2011-03-09 | Hello uses style.css [Alexander Shvets]
+| * 1f3cbd2 2011-03-09 | Added css stylesheet [Alexander Shvets]
+|/
+* 8029c07 2011-03-09 | Added index.html. [Alexander Shvets]
+* 567948a 2011-03-09 | Moved hello.html to lib [Alexander Shvets]
+* 6a78635 2011-03-09 | Add an author/email comment [Alexander Shvets]
+* fa3c141 2011-03-09 | Added HTML header (v1) [Alexander Shvets]
+* 8c32287 2011-03-09 | Added standard HTML page tags (v1-beta) [Alexander Shvets]
+* 43628f7 2011-03-09 | Added h1 tag [Alexander Shvets]
+* 911e8c9 2011-03-09 | First Commit [Alexander Shvets]
+
+Это наша первая возможность увидеть в действии --graph в git hist. Добавление опции --graph в git log вызывает построение дерева коммитов с помощью простых ASCII символов. Мы видим обе ветки (style и master), и то, что ветка master является текущей HEAD. Общим предшественником обеих веток является коммит «Added index.html».
+
+Метка --all гарантированно означает, что мы видим все ветки. По умолчанию показывается только текущая ветка.
