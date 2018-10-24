@@ -1,0 +1,74 @@
+Цели
+
+    Научиться разрешать конфликты во время слияния
+
+01
+Слияние master с веткой style
+
+Теперь вернемся к ветке style и попытаемся объединить ее с новой веткой master.
+Выполните:
+
+git checkout style
+git merge master
+
+Результат:
+
+$ git checkout style
+Switched to branch 'style'
+$ git merge master
+Auto-merging lib/hello.html
+CONFLICT (content): Merge conflict in lib/hello.html
+Automatic merge failed; fix conflicts and then commit the result.
+
+Если вы откроете lib/hello.html, вы увидите:
+Файл: lib/hello.html
+
+<!-- Author: Alexander Shvets (alex@githowto.com) -->
+<html>
+  <head>
+<<<<<<< HEAD
+    <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+=======
+    <!-- no style -->
+>>>>>>> master
+  </head>
+  <body>
+    <h1>Hello,World! Life is great!</h1>
+  </body>
+</html>
+
+Первый раздел - версия во главе текущей ветки (style). Второй раздел - версия ветки master.
+02
+Решение конфликта
+
+Вам необходимо вручную разрешить конфликт. Внесите изменения в lib/hello.html для достижения следующего результата.
+Файл: lib/hello.html
+
+<!-- Author: Alexander Shvets (alex@githowto.com) -->
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+  </head>
+  <body>
+    <h1>Hello, World! Life is great!</h1>
+  </body>
+</html>
+
+03
+Сделайте коммит решения конфликта
+Выполните:
+
+git add lib/hello.html
+git commit -m "Merged master fixed conflict."
+
+Результат:
+
+$ git add lib/hello.html
+$ git commit -m "Merged master fixed conflict."
+Recorded resolution for 'lib/hello.html'.
+[style 645c4e6] Merged master fixed conflict.
+
+04
+Расширенные возможности слияния
+
+Git не предоставляет никаких графических инструментов слияния, но будет с удовольствием работать с любыми сторонними инструментами слияния, которые вы хотите использовать (обсуждение таких инструментов на StackOverflow).

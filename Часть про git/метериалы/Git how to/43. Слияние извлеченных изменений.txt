@@ -1,0 +1,37 @@
+Цели
+
+    Научиться перемещать извлеченные изменения в текущую ветку и рабочий каталог.
+
+01
+Слейте извлеченные изменения в локальную ветку master
+Выполните:
+
+git merge origin/master
+
+Результат:
+
+$ git merge origin/master
+Updating 6e6c76a..2faa4ea
+Fast-forward
+ README |    1 +
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+
+02
+Еще раз проверьте файл README
+
+Сейчас мы должны увидеть изменения.
+Выполните:
+
+cat README
+
+Результат:
+
+$ cat README
+This is the Hello World example from the git tutorial.
+(changed in original)
+
+Вот и изменения. Хотя команда «git fetch» не сливает изменения, мы можем вручную слить изменения из удаленного репозитория.
+03
+Далее
+
+Теперь давайте рассмотрим объединение fetch & merge в одну команду.
